@@ -1,0 +1,35 @@
+{
+  "name": "express-knex-mvc-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon --inspect ./bin/www",
+    "migrate:all": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:latest",
+    "migrate:up": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:up",
+    "migrate:undo": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:down",
+    "migrate:status": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:status",
+    "migrate:rollback": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:rollback --all",
+    "migrate:create": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:make",
+    "migrate:refresh": "npm run migrate:rollback && npm run migrate:all",
+    "generate:secret": "node -e \"console.log(require('crypto').randomBytes(80).toString('base64'))\"",
+    "generate:keys": "node -e \"require('./scripts/generateKeys.js')()\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "knex": "^3.1.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.11.5",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}

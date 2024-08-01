@@ -12,9 +12,7 @@
     "migrate:status": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:status",
     "migrate:rollback": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:rollback --all",
     "migrate:create": "./node_modules/knex/bin/cli.js --knexfile ./config/knexfile.js migrate:make",
-    "migrate:refresh": "npm run migrate:rollback && npm run migrate:all",
-    "generate:secret": "node -e \"console.log(require('crypto').randomBytes(80).toString('base64'))\"",
-    "generate:keys": "node -e \"require('./scripts/generateKeys.js')()\""
+    "migrate:refresh": "npm run migrate:rollback && npm run migrate:all"
   },
   "author": "",
   "license": "ISC",
